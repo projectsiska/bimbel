@@ -40,5 +40,11 @@ class DatabaseSeeder extends Seeder
     );
 
 
+    
+    biaya::create([
+        'harga'=> '1200000',
+        'keterangan'=> 'Total Biaya', 
+    ]);
+
     }
 }
