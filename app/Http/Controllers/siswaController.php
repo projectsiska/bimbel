@@ -137,29 +137,20 @@ class siswaController extends Controller
      */
     public function update(Request $request, siswa $siswa)
     {
-        $rules = [ 
-            'nis' => 'required|unique:siswas',
-            'nama' => 'required',
+        $rules = [  
+            'nama_siswa' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',  
             'agama' => 'required', 
-            'alamat' => 'required',
-            'email' => 'required|unique:siswas',
+            'alamat' => 'required', 
             'telepon' => 'required', 
-            'asal_sekolah' => 'required', 
-            'jurusan' => 'required', 
-            'tahun_masuk' => 'required', 
-            'nama_ayah' => 'required',
-            'telepon_ayah' => 'required',
-            'pekerjaan_ayah' => 'required',
-            'nama_ibu' => 'required',
-            'telepon_ibu' => 'required',
-            'pekerjaan_ibu' => 'required',
+            'asal_sekolah' => 'required',      
         ];
+        
 
         $validatedDataUser['password']=bcrypt($request['password']); 
-        $validatedDataUser['name']=$request->nama;
+        $validatedDataUser['nama']=$request->nama;
         $validatedDataUser['username']=$request->username;
         $validatedDataUser['email']=$request->email;
 
@@ -181,19 +172,22 @@ class siswaController extends Controller
        $validatedDataUser['password']= Hash::make($request->password);
         };
 
+        
  
        $user = $siswa->user;
        $validatedData= $request->validate($rules);
 
-       DB::transaction(function () use($validatedDataUser, $validatedData, $user, $siswa) {
+       if($request->file('foto')){
+        $validatedData['foto']=$request->file('foto')->store('profil');
+         } 
+ 
         user::where('id',$siswa->user_id)
         ->update($validatedDataUser);
  
  
  
          siswa::where('id',$siswa->id)
-         ->update($validatedData);
-        });
+         ->update($validatedData); 
 
 
       

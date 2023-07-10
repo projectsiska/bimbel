@@ -30,15 +30,16 @@ Tambah Siswa
                   <div class="form-group">
                     <label for="exampleInputPassword1">Upload Foto siswa</label>
                     <input type="hidden" name="oldImage" value="{{ $siswa->foto }}">
-                   
-                    <a href="{{ asset('storage/profil/' . $siswa->foto) }}" target="_blank">    <img src="{{ asset('storage/profil/' . $siswa->foto) }}" class="img-preview img-fluid"> </a>
-                  
+                    @if($siswa->foto)
+                    <img src="{{ asset('storage/' . $siswa->foto) }}" style="height:300px" class="img-preview img-fluid">
+
+                    @else
                     <img class="img-preview img-fluid">
-                    
-                    <input type="file"  value="{{ old('foto')}}" name="foto" class="form-control" id="foto"
-                        placeholder="foto customer" onchange="previewImage()">
-                    
-    
+                    @endif
+                    <img class="img-preview img-fluid">
+                    <input type="file" value="{{ old('foto')}}" name="foto"class="form-control col-md-8"
+                        id="foto" placeholder="Foto Bank" onchange="previewImage()">
+
                     @error('foto')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -193,5 +194,21 @@ Tambah Siswa
     </div>
 
 
+    <script>
+      function previewImage() {
+          const foto = document.querySelector('#foto');
+          const imgPreview = document.querySelector('.img-preview')
+  
+          imgPreview.style.display = 'block';
+  
+          const oFReader = new FileReader();
+          oFReader.readAsDataURL(foto.files[0]);
+  
+          oFReader.onload = function (oFREvent) {
+              imgPreview.src = oFREvent.target.result;
+          }
+  
+      }
+  </script>
 
 @endsection
