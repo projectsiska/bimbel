@@ -1,61 +1,35 @@
 <?php
 
-namespace Database\Seeders;
-use App\Models\Pembayaran;
-use App\Models\User; 
-use App\Models\Periode; 
-use App\Models\biaya;
-use App\Models\admin;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
+class CreateAdmin extends Migration
 {
     /**
-     * Seed the application's database.
+     * Run the migrations.
      *
      * @return void
      */
-    public function run()
-    { 
-        //biaya::factory(8)->create();
-   
+    public function up()
+    {
+        Schema::create('admins', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('nama');
+            $table->string('email');
+            $table->string('level');
+            $table->timestamps();
+        });
+    }
 
-        user::create([
-                'nama'=> 'Admin',
-                'email'=> 'admin@gmail.com',
-                'level'=> 'Administrator',
-                'username'=> 'admin',
-                'password'=> bcrypt('admin')
-                ] 
-
-            );
-
-             user::create([
-                    'nama'=> 'Pimpinan',
-                    'email'=> 'pimpinan@gmail.com',
-                    'level'=> 'Pimpinan',
-                    'username'=> 'pimpinan',
-                    'password'=> bcrypt('pimpinan')
-                ]
-
-            );
-
-
-            admin::create([
-                'id'=> '1',
-                'user_id'=> '1',
-                'nama'=> 'Admin',
-                'email'=> 'admin@gmail.com', 
-            ]);
-
-
-            
-            biaya::create([
-                'harga'=> '1200000',
-                'keterangan'=> 'Total Biaya', 
-            ]);
-
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('admins');
     }
 }

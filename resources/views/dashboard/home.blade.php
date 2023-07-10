@@ -124,7 +124,7 @@ Hai {{ $aa = auth()->user()->level }} {{ $aa = auth()->user()->name }}
                             Change
                         </span>
                         <span class="wc-number ml-auto">
-                            {{ number_format(($belum->count() / $pembayaran->count())*100,1)  }}
+                            100%
                         </span>
                     </span>
                 </div>				      
