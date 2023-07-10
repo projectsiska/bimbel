@@ -25,7 +25,7 @@ Halaman Tambah Pembayaran
                     <h4 class="breadcrumb-title">Pembayaran Profile</h4>
                     <ul class="db-breadcrumb-list">
                         <li><a href="/dashboard"><i class="fa fa-home"></i>Home</a></li>
-                        <li><a href="/administrator">Pembayaran</a></li>
+                        <li><a href="/">Pembayaran</a></li>
                     </ul>
                 </div>	
                 <form class="edit-profile m-b30" method="post" action="/pembayaran" enctype="multipart/form-data">

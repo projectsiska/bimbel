@@ -148,8 +148,10 @@ use App\Models\absen_masuk;
     Route::get('pembayaran/cetak-biaya/{biaya}', [pembayaranController::class, 'cetakkartu'])->name('pembayaran.cetak-biaya'); 
     
    // Route::get('/create', [pembayaranController::class]);
+    Route::post('/bayarsiswa', [pembayaranController::class,'bayarsiswa'])->name('bayarsiswa'); 
     Route::post('/pembayaran', [pembayaranController::class]); 
     Route::get('/pembayaran-home', [pembayaranController::class,'home'])->name('home'); 
+    Route::get('/riwayat', [pembayaranController::class,'riwayat'])->name('riwayat'); 
     Route::resource('/create', pembayaranController::class);  
     Route::resource('/pembayaran', pembayaranController::class);   
  

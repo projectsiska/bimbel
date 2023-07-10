@@ -58,6 +58,7 @@ class pembayaranController extends Controller
             $validatedData['bukti']=$request->file('bukti')->store('upload-bukti');
         } ;
 
+        
          
             $validatedData['status']="Menunggu"; 
            
