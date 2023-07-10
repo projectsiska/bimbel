@@ -59,7 +59,7 @@ Halaman Utama Kelas
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-            @if(auth()->uer()->level=="Administrator")
+            @if(auth()->user()->level=="Administrator")
                 <a type="button" href="/kelas/create" class="btn btn-primary btn-rounded btn-fw"
                     style="margin-bottom:20px">Tambah</a>
             @endif

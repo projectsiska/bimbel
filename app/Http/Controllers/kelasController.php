@@ -22,6 +22,7 @@ class kelasController extends Controller
      */
     public function index()
     {
+         
         return view('dashboard.kelas.index',[
 
             "post"=> kelas::all()
