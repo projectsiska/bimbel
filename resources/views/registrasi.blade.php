@@ -112,7 +112,7 @@
                                         <label for="exampleInputPassword1">Asal Sekolah</label>
                                         <Br>
                                         <input type="text" class="form-control" required name="asal_sekolah" id="asal_sekolah"
-                                            placeholder="Tempat Lahir">
+                                            placeholder="Asal Sekolah">
 
                                     </div>
 

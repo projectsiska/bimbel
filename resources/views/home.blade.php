@@ -141,7 +141,7 @@
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-                        Batter Education For A Better Human
+                        Better Education For A Better Human
                     </div>
 
                     <!-- LAYER NR. 3 -->
