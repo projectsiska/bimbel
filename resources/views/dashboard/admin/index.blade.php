@@ -13,6 +13,7 @@ Halaman Utama
 @endsection
 
 
+
 <style>
 
     .col-md-6 {
@@ -26,6 +27,7 @@ Halaman Utama
             display: inline-block;
             color: #ffc95f;
             border-radius: 4px;
+            margin-right:10px;
         }
 
         .edit:hover {
@@ -33,6 +35,22 @@ Halaman Utama
             background-color: #ffc95f;
             color: #fff;
         }
+
+        .showw {
+            border: 2px solid;
+            padding: 5px 10px;
+            display: inline-block;
+            color: #34bfa3;
+            border-radius: 4px;
+            margin-right:10px;
+        }
+
+        .showw:hover {
+            border: 2px solid #34bfa3;
+            background-color: #34bfa3;
+            color: #fff;
+        }
+
 </style>
 
 <div class="row">
@@ -60,34 +78,48 @@ Halaman Utama
                                 <tbody>
                                     @foreach($post as $posta)
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $posta->nama }}</td>
                                         <td>{{ $posta->level }}</td>
                                         <td>{{ $posta->email }}</td>
                                         <td>{{ $posta->user->username }}</td>
 
                                         <td>
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <a class="edit" href='/administrator/{{ $posta['id']}}/edit'><i
-                                                            class="fa fa-pencil"></i></a>
-                                                </div>
 
 
+                                            
+                                            <div class="noti-box-list">
+                                                <ul>
+                                                    <li>
+                                                        <a href='/administrator/{{ $posta['id']}}' class="showw">
+                                                                <i class="fa fa-eye"></i>
+                                                             
+                                                        </a> <br>
+                                                        
+                                                        <a href='/administrator/{{$posta->id}}/edit' class="edit">
+                                                                <i class="fa fa-pencil"></i>
+                                                            
+                                                        </a> <br>
+
+                                                       
+                                                        <form action="/administrator/{{ $posta->id }}" method="post"
+                                                            style="display:contents">
+                                                            @method('delete')
+                                                            @csrf
 
 
+                                                            <input onclick="return confirm('Are You Sure')" role="button"
+                                                                href='/administrator/{{$posta->id}}/destroy' type="submit" VALUE="X" class="delete">
+                                                               
+                                                                
+                                                            </a>
+                                                        </form>
 
-                                                <div class="form-group col-md-6">
-                                                    <form action="/administrator/{{ $posta->id }}" method="post"
-                                                        style="display:contents">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <a class="delete" onclick="return confirm('Are You Sure')"
-                                                            type="button"><i class="fa fa-close"></i></a>
-                                                    </form>
-                                                </div>
+
+                                                    </li>
+                                                </ul>
                                             </div>
-
+ 
 
                                         </td>
                                     </tr>

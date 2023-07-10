@@ -4,7 +4,7 @@
 </div>
 @elseif(session()->has('update'))
 <div class="alert alert-warning" role="alert">
-    {{session('warning')}}
+    {{session('update')}}
 </div>
 @elseif(session()->has('deleted'))
 <div class="alert alert-danger" role="alert">

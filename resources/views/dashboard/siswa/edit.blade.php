@@ -51,7 +51,7 @@ Tambah Siswa
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Nama siswa</label>
                     <div class="col-sm-9">
-                      <input type="text" value="{{$siswa->nama}}" class="form-control @error('nama_siswa') is->invalid @enderror" name="nama_siswa" {{ old('nama_siswa')}} />
+                      <input type="text" value="{{$siswa->nama_siswa}}" class="form-control @error('nama_siswa') is->invalid @enderror" name="nama_siswa" {{ old('nama_siswa')}} />
                     </div>
                   </div>
                 </div>

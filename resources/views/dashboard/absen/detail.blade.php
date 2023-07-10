@@ -76,21 +76,21 @@ Halaman Detail Absen
                     <div class="mail-list-container">
                          
                         <div class="mail-box-list">
-                            @foreach($absenmasuk as $siswa)
+                            @foreach($absenmasuk as $siswas)
                             <div class="mail-list-info">
                                   
                                 <div class="mail-list-title">
-                                    <h6> {{$siswa->siswa->nama_siswa}}</h6>
+                                    <h6> {{$siswas->nama_siswa}}</h6>
                                 </div>
-                                <div class="mail-list-title-info">
-                                    <p> {{$siswa->siswa->jenis_kelamin}}</p>
+                              <div class="mail-list-title-info">
+                                    <p> {{$siswas->jenis_kelamin}}</p>
                                 </div>
                                 <div class="mail-list-time">
-                                    <span> {{$siswa->siswa->created_at}}</span>
-                                </div>
+                                    <span> {{$siswas->created_at}}</span>
+                                </div>  
                                 <ul class="mailbox-toolbar">
                                 
-                                    <li data-toggle="tooltip" title="" data-original-title="Snooze"><a href="{{ route('siswa.show', $siswa->id) }}"><i class="fa fa-clock-o"></i></a></li> 
+                                    <li data-toggle="tooltip" title="" data-original-title="Snooze"><a href="{{ route('siswa.show', $siswas->siswa_id) }}"><i class="fa fa-clock-o"></i></a></li> 
                                 </ul>
                             </div>
 

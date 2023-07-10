@@ -39,7 +39,7 @@ Tambah Absen
                             placeholder="Last">
 
                     </div> 
-
+                    
                   
                     <div class="form-group">
                         <select name="kelas_id" class="form-control js-example-basic-single w-100">

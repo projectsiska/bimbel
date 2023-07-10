@@ -86,7 +86,7 @@ class adminController extends Controller
            $validatedData['user_id'] = $userCreate->id;
            
            admin::create($validatedData);
-        return redirect('/admin')->with('success','admin Has Been Success!');
+        return redirect('/administrator')->with('success','admin Has Been Success!');
     
     }
 
@@ -96,9 +96,12 @@ class adminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(admin $admin)
-    { 
-       }
+    public function show($id, admin $admin)
+    {  
+        return view('dashboard.admin.detail',[
+            'admin' => admin::join('users','users.id', '=', 'admins.user_id')->where('admins.id',$id) ->get(['users.username', 'admins.*'])
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -123,7 +126,7 @@ class adminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, admin $admin)
+    public function update($id, Request $request, admin $admin)
     {   
         $rules = [ 
             'nama' => 'required',   
@@ -134,12 +137,9 @@ class adminController extends Controller
 
         $usernya = user::find($request->user_id);
 
-      //  dd($usernya->username);
-
-        $validatedDataUser['password']=bcrypt($request['password']); 
+          
         $validatedDataUser['nama']=$request->nama;
-        $validatedDataUser['username']=$request->username;
-        $validatedDataUser['email']=$request->email;
+        $validatedDataUser['username']=$request->username; 
 
         if($request->email != $admin->email)
         {
@@ -158,25 +158,26 @@ class adminController extends Controller
 
        $validatedDataUser['password']= Hash::make($request->password);
         };
-
-        dd($request->validate($rules));
+ 
         
         $user = $admin->user;
         $validatedData= $request->validate($rules);
         
-        DB::transaction(function () use($validatedDataUser, $validatedData, $user, $admin) {
-        user::where('id',$request->user_id)
+
+        admin::where('id',$id)
+        ->update($validatedData);
+
+         user::where('id',$request->user_id)
         ->update($validatedDataUser);
- 
- 
- 
-         admin::where('id',$admin->id)
-         ->update($validatedData);
-        });
+        
+        
+        
+      
+         
 
 
       
-        return redirect('/admin')->with('success','admin Has Been Update!');
+        return redirect('/administrator')->with('success','admin Has Been Update!');
     }
 
 
@@ -186,12 +187,25 @@ class adminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(admin $admin)
+    public function destroy($id, admin $admin)
     {
       
-        user::destroy($admin->user_id);
-        admin::destroy($admin->id);
-        return redirect('/admin')->with('deleted','admin Has Been Deleted!');
+        $cari = admin::find($id);
+    
+        if ($aa = auth()->user()->admin->id == $id){
+        
+            return redirect('/administrator')->with('update','Reject for deleted your account!');
+        
+        }else{
+      
+            user::destroy($cari->user_id);
+            admin::destroy($cari->id);
+            return redirect('/administrator')->with('deleted','admin Has Been Deleted!');
+        }
+
+
+
+        
     }
 
     function getadmin(admin $admin){

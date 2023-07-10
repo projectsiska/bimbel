@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\siswa;
 use App\Models\user;
+use App\Models\nilai;
+use App\Models\siswa_nilai;
+use App\Models\sertifikat;
 use App\Models\pembayaran;
 use App\Models\absen_masuk;
 use Illuminate\Http\Request;
@@ -210,10 +213,13 @@ class siswaController extends Controller
         if($siswa->foto){
             Storage::delete($siswa->foto);
         }
-        pembayaran::destroy('siswa_id',$siswa->id);
-        siswa::destroy($siswa->id);
-        // nilai::destroy('siswa_id',$siswa->id);
-        absen_masuk::destroy('siswa_id',$siswa->id);
+
+        pembayaran::where('siswa_id',$siswa->id)->delete();
+        sertifikat::where('siswa_id',$siswa->id)->delete();
+        absen_masuk::where('siswa_id',$siswa->id)->delete();
+        siswa_nilai::where('siswa_id',$siswa->id)->delete();
+          
+        siswa::destroy('siswa_id',$siswa->id);
         user::destroy($siswa->user_id);
         return redirect('/siswa')->with('deleted','Siswa Has Been Deleted!');
     }

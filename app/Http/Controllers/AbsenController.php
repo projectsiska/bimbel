@@ -67,12 +67,21 @@ class AbsenController extends Controller
     {
        
  
- 
+        if(auth()->user()->level=="Guru"):
         return view('dashboard.absen.create',[
             "id_absen"=>"absennya", 
             "guru"=> guru::all(),
             "kelas"=> kelas::where('guru_id', auth()->user()->guru->id)->get(),
          ]);
+
+        elseif(auth()->user()->level=="Administrator"):
+            return view('dashboard.absen.create',[
+                "id_absen"=>"absennya", 
+                "guru"=> guru::all(),
+                "kelas"=> kelas::all(),
+             ]);
+
+        endif;
 
         
     }
@@ -112,7 +121,7 @@ class AbsenController extends Controller
     {
         return view('dashboard.absen.detail',[
             'absen' => $absen,
-            'absenmasuk'=> absen_masuk::where('absen_id',$absen->id)->get()
+            'absenmasuk'=> absen_masuk::join('siswas', 'siswas.id', '=', 'absen_masuks.siswa_id')->where('absen_id',$absen->id)->get(['siswas.*','absen_masuks.*'])
    
         ]);
     }
@@ -204,18 +213,27 @@ class AbsenController extends Controller
      */
     public function destroy(absen $absen)
     { 
-        
-        if(count($absen->absen_masuk) > 0){
-       
-      
-            foreach (absen_masuk::where('nilai_id',$nilai->id)->get() as $aa):
-                
-                absen_masuk::destroy('nilai_id',$aa->id);
-            endforeach;
-            } 
-           
-    
-            absen::destroy($nilai->id);
+
+         
+        $absen_masuk = absen_masuk::where('absen_id',$absen->id)->count();
+        $absen_masuknya = absen_masuk::where('absen_id',$absen->id)->get(['id']);
+ 
+        if($absen_masuk != null):
+          
+            
+            absen_masuk::destroy($absen_masuknya);
+            absen::destroy($absen->id);
             return redirect('/absen')->with('deleted','Absen Has Been Deleted!');
+            
+
+        else:  
+            absen::destroy($absen->id);
+            return redirect('/absen')->with('deleted','Absen Has Been Deleted!');
+
+
+        endif;
+
+    
+          
     }
 }
