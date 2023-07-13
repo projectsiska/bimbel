@@ -32,6 +32,18 @@ class DatabaseSeeder extends Seeder
 
         );
 
+
+        profil::create([
+            'id'=> '1',
+            'email'=> 'admin@gmail.com',
+            'level'=> 'Administrator',
+            'username'=> 'admin',
+            'password'=> bcrypt('admin')
+            ] 
+
+        );
+
+
          user::create([
                 'nama'=> 'Pimpinan',
                 'email'=> 'pimpinan@gmail.com',

@@ -84,8 +84,7 @@ class SertifikatController extends Controller
     {
         return view('dashboard.sertifikat.edit',[
             'sertifikat' => $sertifikat,
-            "siswa"=>siswa::where('status','Terdaftar'), 
-            'user' => sertifikat::find($sertifikat->id)
+            "siswa"=>siswa::where('status','Terdaftar')->get(),  
         ]);
     }
 

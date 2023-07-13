@@ -21,7 +21,7 @@ Tambah Guru
                 <a type="button" href="/guru" class="btn btn-primary">Back</a>
                 <br>
                 <br>
-                <form method="post" enctype="multipart/form-data" action="/rekening/{{$rekening->id}}">
+                <form method="post" enctype="multipart/form-data" action="/sertifikat/{{$sertifikat->id}}">
                     @csrf
                     @method('put')
 
@@ -31,41 +31,32 @@ Tambah Guru
 
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Bank</label>
-                                <input type="text" required value="{{ old('bank',$rekening->bank)}}" name="bank"
-                                   class="form-control col-md-8" id="bank" placeholder="Nama Bank">
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Atas Nama</label>
-                                <input type="text" required value="{{ old('atas_nama',$rekening->atas_nama)}}"
-                                    name="atas_nama"class="form-control col-md-8" id="atas_nama" placeholder="Atas Nama">
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Rekening</label>
-
-                                <input type="text" required value="{{ old('rekening',$rekening->rekening)}}"
-                                    name="rekening" class="form-control col-md-8 @error('image') is-incalid @enderror"
-                                    id="rekening" placeholder="Nomor Rekening">
-
+                                <label class="col-sm-4 col-form-label" for="inputState">siswa</label>
+                                <select name="siswa_id" id="siswa_id" class="form-control col-sm-8"
+                                    data-live-search="true">
+                                    <option value="{{$sertifikat->siswa_id}}" selected>
+                                        --{{ $sertifikat->siswa->nama_siswa }}--</option>
+                                    @foreach( $siswa as $siswas)
+                                    <option value="{{$siswas->id}}">{{$siswas->nama_siswa}}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Foto Bank</label>
-                                <input type="hidden" name="oldImage" value="{{ $rekening->foto_bank }}">
-                                @if($rekening->foto_bank)
-                                <img src="{{ asset('storage/' . $rekening->foto_bank) }}" style="height:300px" class="img-preview img-fluid">
+                                <label class="col-sm-3 col-form-label">Sertifikat</label>
+                                <input type="hidden" name="oldImage" value="{{ $sertifikat->sertifikat }}">
+                                @if($sertifikat->sertifikat)
+                                <img src="{{ asset('storage/' . $sertifikat->sertifikat) }}" style="height:300px" class="img-preview img-fluid">
 
                                 @else
                                 <img class="img-preview img-fluid">
                                 @endif
                                 <img class="img-preview img-fluid">
-                                <input type="file" value="{{ old('foto_bank')}}" name="foto_bank"class="form-control col-md-8"
-                                    id="foto_bank" placeholder="Foto Bank" onchange="previewImage()">
+                                <input type="file" value="{{ old('sertifikat')}}" name="sertifikat"class="form-control col-md-8"
+                                    id="sertifikat" placeholder="Foto Bank" onchange="previewImage()">
 
-                                @error('foto_bank')
+                                @error('sertifikat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -74,7 +65,7 @@ Tambah Guru
 
 
 
-                            <input type="text" hidden name="id" value="{{ old('id',$rekening->id)}}" readonly required
+                            <input type="text" hidden name="id" value="{{ old('id',$sertifikat->id)}}" readonly required
                                 class="form-control @error('id') is->invalid @enderror" id="id" placeholder="id">
 
 
@@ -86,7 +77,7 @@ Tambah Guru
                             @enderror
 
 
-                            <button type="submit" class="btn btn-primary">Edit Bank</button>
+                            <button type="submit" class="btn btn-primary">Edit Sertifikat</button>
 
                 </form>
 
@@ -100,13 +91,13 @@ Tambah Guru
 
 
         function previewImage() {
-            const foto_bank = document.querySelector('#foto_bank');
+            const sertifikat = document.querySelector('#sertifikat');
             const imgPreview = document.querySelector('.img-preview')
 
             imgPreview.style.display = 'block';
 
             const oFReader = new FileReader();
-            oFReader.readAsDataURL(foto_bank.files[0]);
+            oFReader.readAsDataURL(sertifikat.files[0]);
 
             oFReader.onload = function (oFREvent) {
                 imgPreview.src = oFREvent.target.result;

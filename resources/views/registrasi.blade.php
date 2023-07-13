@@ -77,7 +77,7 @@
 
 
                                     <div class="col-lg-6 col-md-6" style="margin-bottom:20px">
-                                        <label for="exampleInputPassword1">Jenis Kelamin</label>
+                                        <label for="exampleInputPassword1">Agama</label>
                                         <Br>
                                         <select class="form-control" required {{ old('agama')}} name="agama">
                                             <option>Budha</option>

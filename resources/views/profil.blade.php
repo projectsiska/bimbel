@@ -69,8 +69,8 @@ Profil Kami
         <div class="container">
             <div class="row align-items-center d-flex">
                 <div class="col-lg-5 col-md-12 heading-bx">
-                    <h2 class="m-b10">Our Story</h2>
-                    <h5 class="fw4">{{ $post[0]->nama }}</p>
+                    <h2 class="m-b10">{{ $post[0]->nama }}</h2>
+                    <h5 class="fw4">{{ $post[0]->deskripsi }}</p>
                  </div>
                 <div class="col-lg-7 col-md-12 heading-bx p-lr">
                     <div class="video-bx">
@@ -80,50 +80,7 @@ Profil Kami
             </div>
         </div>
     </div>
-    <!-- Our Story END ==== -->
-    <!-- Our Status ====  
-    <div class="section-area content-inner section-sp1">
-        <div class="container">
-            <div class="section-content">
-                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                        <div class="counter-style-1">
-                            <div class="text-primary">
-                                <span class="counter">3000</span><span>+</span>
-                            </div>
-                            <span class="counter-text">Completed Projects</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                        <div class="counter-style-1">
-                            <div class="text-black">
-                                <span class="counter">2500</span><span>+</span>
-                            </div>
-                            <span class="counter-text">Happy Clients</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                        <div class="counter-style-1">
-                            <div class="text-primary">
-                                <span class="counter">1500</span><span>+</span>
-                            </div>
-                            <span class="counter-text">Questions Answered</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
-                        <div class="counter-style-1">
-                            <div class="text-black">
-                                <span class="counter">1000</span><span>+</span>
-                            </div>
-                            <span class="counter-text">Ordered Coffee's</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    Our Status END ==== -->
-    <!-- About Content ==== -->
+    
     <div class="section-area section-sp2 bg-fix ovbl-dark join-bx text-center" style="background-image:url(assets/images/background/bg1.jpg);">
         <div class="container">
             <div class="row">

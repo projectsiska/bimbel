@@ -84,7 +84,7 @@ Halaman Edit Pembayaran
                                 <img class=" img-preview img-fluid" class="form-control col-sm-8">
                                 @endif
                                 <img class="img-preview img-fluid col-sm-8">
-                                <input type="file" value="{{ old('bukti')}}" name="bukti" class="form-control col-md-8"
+                                <input type="file" hidden value="{{ old('bukti')}}" name="bukti" class="form-control col-md-8"
                                     id="bukti" placeholder="Foto Bank" onchange="previewImage()" @if($pembayaran->status=="Menunggu") hidden @endif>
 
                                 @error('bukti')

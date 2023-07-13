@@ -26,6 +26,11 @@ class kelas extends Model
   {
       return $this->belongsTo(guru::class);
   }
+
+  public function siswa()
+  {
+      return $this->belongsTo(siswa::class);
+  }
   
 
   public function absen()

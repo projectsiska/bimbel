@@ -52,7 +52,7 @@ class siswa extends Model
      
     public function kelas()
     {
-        return $this->belongsTo(kelas::class);
+        return $this->hasone(kelas::class);
     }
     
       
@@ -68,7 +68,8 @@ class siswa extends Model
         return $this->belongsTo(absen::class);
     }
 
-    
+ 
+
     public function absen_masuk()
     {
         return $this->belongsTo(absen_masuk::class);

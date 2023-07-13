@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\siswa;
 use App\Models\user;
+use App\Models\kelas;
 use App\Models\nilai;
 use App\Models\siswa_nilai;
 use App\Models\sertifikat;
@@ -122,6 +123,7 @@ class siswaController extends Controller
     {
         return view('dashboard.siswa.edit',[
             'siswa' => $siswa,
+            'kelas' => kelas::all(),
             /* 'paket' => paket::all(),
             'user' => $siswa->user */
             'user' => siswa::join('users', 'siswas.user_id', '=', 'users.id')->find($siswa->user_id)

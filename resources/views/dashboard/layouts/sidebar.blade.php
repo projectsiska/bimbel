@@ -72,6 +72,9 @@
                     </a>
                     <ul>
                         <li>
+                            <a href="{{route('kelas.index')}}" class="ttr-material-button"><span class="ttr-label">Kelas</span></a>
+                        </li> 
+                        <li>
                             <a href="{{route('absen.index')}}" class="ttr-material-button"><span class="ttr-label">Absen</span></a>
                         </li>
                         <li>
@@ -81,6 +84,7 @@
                         <li>
                             <a href="{{route('sertifikat.index')}}" class="ttr-material-button"><span class="ttr-label">Sertifikat</span></a>
                         </li> 
+
                     </ul>
                 </li>
 
@@ -94,9 +98,7 @@
                         <li>
                             <a href="{{route('profil.index')}}" class="ttr-material-button"><span class="ttr-label">Profil</span></a>
                         </li>
-                        <li>
-                            <a href="{{route('kelas.index')}}" class="ttr-material-button"><span class="ttr-label">Kelas</span></a>
-                        </li> 
+                       
                     </ul>
                 </li>
 

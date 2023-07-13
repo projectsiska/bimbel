@@ -110,9 +110,8 @@ Halaman Utama
                                                             @csrf
 
 
-                                                            <a onclick="return confirm('Are You Sure')" role="button"
-                                                                href='/guru/{{$posta->id}}/edit' class="delete">
-                                                                <i class="fa fa-close"></i>
+                                                            <input onclick="return confirm('Are You Sure')" role="button"
+                                                            href='/guru/{{$posta->id}}/destroy' type="submit" VALUE="X" class="delete">
                                                                 
                                                             </a>
                                                         </form>

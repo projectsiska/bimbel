@@ -154,6 +154,27 @@ Tambah Siswa
                   </div>
                 </div>
               </div>
+
+              <div class="col-md-6">
+                <label class="col-sm-4 col-form-label">Kelas</label>
+                <select name="kelas" class="form-control js-example-basic-single w-100">
+                    <option value="{{ $siswa->kelas }}" >--{{ $siswa->kelas }}--</option>
+                    @foreach( $kelas as $kelas)
+                    <option value="{{ $kelas->id }}">{{ $kelas->nama_kelas }} / {{ $kelas->guru->nama }}</option>
+                    @endforeach
+                  </select>      
+                </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Status</label>
+                  <div class="col-sm-9">
+                    <select name="status">
+                      <option value="{{ $siswa->status }}">--{{ $siswa->status }}--</option>
+                      <option value="Alumni">Alumni</option>
+                      <option value="Terdaftar">Terdaftar</option>
+                  </div>
+                </div>
+              </div>
               </div>
 
               <hr>
