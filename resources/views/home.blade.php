@@ -24,7 +24,7 @@
                     data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                     data-description="Science says that Women are generally happier">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/slider/slide1.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{ asset('assets/dashboard/images/slider/slide1.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina />
 
                     <!-- LAYER NR. 1 -->
@@ -87,7 +87,7 @@
                     data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                     data-description="Science says that Women are generally happier">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/slider/slide2.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{ asset('assets/dashboard/images/slider/slide2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina />
 
                     <!-- LAYER NR. 1 -->
@@ -157,7 +157,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="service-bx">
                         <div class="action-box">
-                            <img src="{{ asset('assets/dashboard/images/our-services/pic1.jpg')}}" style="width:290px; height: 218px" alt="">
+                            <img src="{{ asset('assets/dashboard/images/our-services/pic1.jpg')}}" style="width:100%; height: 218px" alt="">
                         </div>
                         <div class="info-bx text-center">
                             <div class="feature-box-sm radius bg-white">
@@ -171,7 +171,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="service-bx">
                         <div class="action-box">
-                            <img src="{{ asset('assets/dashboard/images/our-services/pic2.jpg')}}" style="width:290px; height: 218px" alt="">
+                            <img src="{{ asset('assets/dashboard/images/our-services/pic2.jpg')}}" style="width:100%; height: 218px" alt="">
                         </div>
                         <div class="info-bx text-center">
                             <div class="feature-box-sm radius bg-white">
@@ -185,7 +185,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="service-bx m-b0">
                         <div class="action-box">
-                            <img src="{{ asset('assets/dashboard/images/our-services/pic3.jpg')}}" style="width:290px; height: 218px" alt="">
+                            <img src="{{ asset('assets/dashboard/images/our-services/pic3.jpg')}}" style="width:100%; height: 218px" alt="">
                         </div>
                         <div class="info-bx text-center">
                             <div class="feature-box-sm radius bg-white">
