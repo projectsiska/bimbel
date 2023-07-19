@@ -41,6 +41,11 @@ Tambah Kelas
               </div>
 
               <div class="form-group">
+                <label for="exampleInputName1">Tahun Ajaran</label>
+                <input type="text" name="tahun_ajaran" {{ old('tahun_ajaran')}} class="form-control" id="tahun_ajaran" placeholder="Tahun Ajaran">
+              </div>
+
+              <div class="form-group">
                 <label for="exampleInputEmail3">Keterangan</label>
                 <textarea   name="keterangan" {{ old('keterangan')}} class="form-control"  placeholder="keterangan">{{ old('keterangan')}}</textarea>
               </div>

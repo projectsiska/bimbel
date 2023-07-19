@@ -53,6 +53,13 @@ Edit Kelas
                     </div>
 
                     <div class="form-group">
+                        <label for="exampleTextarea1">Tahun Ajaran</label>
+                        <input class="form-control @error('tahun_ajaran') is->invalid @enderror" {{ old('tahun_ajaran')}}
+                            name="tahun_ajaran" id="exampleTextarea1" rows="4">{{$kelas->tahun_ajaran}}</textarea>
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="exampleTextarea1">Status</label>
                         <select name="status" style="color:black" class="form-control">
                             <option value="{{$kelas->status}}" selected>--{{$kelas->status}}--

@@ -139,6 +139,13 @@
                 </li>
 
                 <li>
+                    <a href="{{ route('kelas.laporan-kelas') }}" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-layout-accordion-list"></i></span>
+                        <span class="ttr-label">Kelas</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{ route('pembayaran.laporan-pembayaran') }}" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
                         <span class="ttr-label">Pembayaran</span>

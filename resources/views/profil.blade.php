@@ -71,12 +71,13 @@ Profil Kami
                 <div class="col-lg-5 col-md-12 heading-bx">
                     <h2 class="m-b10">{{ $post[0]->nama }}</h2>
                     <h5 class="fw4">{{ $post[0]->deskripsi }}</p>
-                 </div>
-                <div class="col-lg-7 col-md-12 heading-bx p-lr">
-                    <div class="video-bx">
-                        <img src="assets/images/about/pic1.jpg" alt="">
-                     </div>
-                </div>
+                        <a href="" class="btn button-md">{{$post[0]->telepon}}</a>
+                    </div>
+                   <div class="col-lg-7 col-md-12 heading-bx p-lr">
+                       <div class="video-bx">
+                           <img  src="{{ asset('storage/' . $post[0]->foto) }}" alt="">
+                        </div>
+                   </div>
             </div>
         </div>
     </div>

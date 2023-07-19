@@ -58,7 +58,17 @@ Tambah Kelas
                         </div>
                         <div class="col-md-6">
                             <div class="form-group row" style="flex-wrap: inherit">
-                                <label class="col-sm-4 col-form-label">status</label>
+                                <label class="col-sm-4 col-form-label">Tahun Ajaran</label>
+                                <label class="col-sm-0 col-form-label" style="width:2px">:</label>
+                                <div class="col-sm-8 col-form-label">
+                                    {{$kelas->tahun_ajaran}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row" style="flex-wrap: inherit">
+                                <label class="col-sm-4 col-form-label">Status</label>
                                 <label class="col-sm-0 col-form-label" style="width:2px">:</label>
                                 <div class="col-sm-8 col-form-label">
                                     {{$kelas->status}}

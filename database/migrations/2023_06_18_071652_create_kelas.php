@@ -18,6 +18,7 @@ class CreateKelas extends Migration
             $table->string('nama_kelas');
             $table->string('guru_id'); 
             $table->string('keterangan'); 
+            $table->string('tahun_ajaran'); 
             $table->string('status'); 
             $table->timestamps();
         });

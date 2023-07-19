@@ -78,6 +78,11 @@ use App\Models\absen_masuk;
 
      //kelas komponen
       
+    Route::get('kelas/laporan', [kelasController::class, 'laporan'])->name('kelas.laporan-kelas'); 
+    Route::get('kelas/laporan-pertanggal/{tglawal}/{tglakhir}', [kelasController::class, 'cetakpertanggal'])->name('kelas.laporan-pertanggal'); 
+    Route::get('kelas/laporan-berdasarkan/{berdasarkan}/{isinya}', [kelasController::class, 'cetakberdasarkan'])->name('kelas.laporan-berdasarkan'); 
+    Route::get('kelas/laporan-all/', [kelasController::class, 'cetakall'])->name('kelas.laporan-all');
+
     Route::get('/kelas/get-kelas/{kelas}', [kelasController::class, 'getkelas']);
     Route::get('/kelas/checkSlug', [kelasController::class, 'checkSlug']);
     Route::resource('/kelas', kelasController::class)->parameters(['kelas' => 'kelas']);

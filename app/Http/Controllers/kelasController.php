@@ -56,6 +56,7 @@ class kelasController extends Controller
             'nama_kelas' => 'required',
             'guru_id' => 'required', 
             'keterangan' => 'required',
+            'tahun_ajaran' => 'required',
             'status' => 'required'
         ]);
         
@@ -77,7 +78,7 @@ class kelasController extends Controller
      */
     public function show($id)
     {
-       // ddd($id);
+        
         $kelas = array(
             'id_kelas'=>"kelasnya", 
             'kelas'=> kelas::find($id),
@@ -117,6 +118,7 @@ class kelasController extends Controller
             'nama_kelas' => 'required',
             'guru_id' => 'required',  
             'keterangan' => 'required',
+            'tahun_ajaran' => 'required',
             'status' => 'required'
             
         ]); 
@@ -140,5 +142,47 @@ class kelasController extends Controller
         posting::destroy($kelas->kelas_id); */
         kelas::destroy($kelas);
         return redirect('/kelas')->with('deleted','Kelas Has Been Deleted!');
+    }
+
+
+
+
+
+
+
+
+
+    public function laporan()
+    {
+        
+        $id = auth()->user()->id ;
+        return view('dashboard.kelas.laporan');
+
+    //dd($postper);
+    }
+
+    public function cetakpertanggal($tglawal, $tglakhir)
+    {
+        
+        //dd(["tanggal awal".$tglawal, "tanggal akhir".$tglakhir]);
+        $cetakpertanggalnya = kelas::join('siswas', 'siswas.kelas', '=', 'kelas.id')
+        ->whereBetween('updated_at', [$tglawal, $tglakhir]);
+        return view('dashboard.kelas.kelas_pdf', compact('cetakpertanggalnya'));
+        
+    }
+
+    
+    public function cetakall()
+    {
+        //dd(["berdasarkan: ".$berdasarkan, "isinya ".$isinya]);
+        $cetakpertanggalnya = kelas::join('siswas', 'siswas.kelas', '=', 'kelas.id')->get();
+                return view('dashboard.kelas.kelas_pdf', compact('cetakpertanggalnya'));
+    }
+
+    public function cetakberdasarkan($berdasarkan, $isinya)
+    {
+        //dd(["berdasarkan: ".$berdasarkan, "isinya ".$isinya]);
+        $cetakpertanggalnya = kelas::join('siswas', 'siswas.kelas', '=', 'kelas.id')->WHERE("$berdasarkan",'LIKE', "%$isinya%")->get();
+                return view('dashboard.kelas.kelas_pdf', compact('cetakpertanggalnya'));
     }
 }

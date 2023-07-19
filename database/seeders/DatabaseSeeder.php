@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 use App\Models\Pembayaran;
-use App\Models\User; 
+use App\Models\user; 
 use App\Models\Periode; 
 use App\Models\biaya;
 use App\Models\admin;
+use App\Models\profil;
 
 use Illuminate\Database\Seeder;
 
@@ -35,10 +36,11 @@ class DatabaseSeeder extends Seeder
 
         profil::create([
             'id'=> '1',
-            'email'=> 'admin@gmail.com',
-            'level'=> 'Administrator',
-            'username'=> 'admin',
-            'password'=> bcrypt('admin')
+            'nama'=> 'NEC',
+            'alamat'=> 'Alamat',
+            'email'=> 'email@gmail',
+            'telepon'=> '0829138',
+            'deskripsi'=> 'mengenai NEC'
             ] 
 
         );

@@ -265,71 +265,22 @@
     </div>
 
     <!-- Form -->
-    <div class="section-area section-sp1 ovpr-dark bg-fix online-cours"
-        style="background-image:url(assets/images/background/bg1.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center text-white">
-                    <h2>Courses To Learn</h2>
-                    <h5>Own Your Feature Learning Skills</h5>
-                    <form class="cours-search">
-                        <div class="input-group">
+  
 
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="mw800 m-auto">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="cours-search-bx m-b30">
-                            <div class="icon-box">
-                                <h3><i class="ti-user"></i><span class="counter">5</span>M</h3>
-                            </div>
-                            <span class="cours-search-text">With Alumni student</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="cours-search-bx m-b30">
-                            <div class="icon-box">
-                                <h3><i class="ti-book"></i><span class="counter">30</span>K</h3>
-                            </div>
-                            <span class="cours-search-text">Real Test Exam.</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="cours-search-bx m-b30">
-                            <div class="icon-box">
-                                <h3><i class="ti-layout-list-post"></i><span class="counter">10</span>
-                                </h3>
-                            </div>
-                            <span class="cours-search-text">Profesional Teacher.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section-area section-sp2">
+    <div class="section-area section-sp1 ovpr-dark bg-fix online-cours">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center heading-bx">
-                    <h2 class="title-head m-b0">Kenapa <span>Kami?</span></h2>
-                    <p class="m-b0">Kenapa Anda Harus Memilih Kami?</p>
+                    <h2 class="title-head m-b0" style="color:white">Kenapa <span>Kami?</span></h2>
+                    <p class="m-b0" style="color:white">Kenapa Anda Harus Memilih Kami?</p>
                 </div>
             </div>
             <div class="row">
-                <div
-                    class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0 m-b30 owl-loaded owl-drag">
-
-
-
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage"
-                            style="transition: all 1s ease 0s; width: 4480px; transform: translate3d(-1760px, 0px, 0px);">
-                            <div class="owl-item cloned" style="width: 640px;">
+                <div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0 m-b30 owl-loaded owl-drag">
+  
+                    <div class="row">
+                        
+                            <div class="col-md-6" style="background:white; width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                         
@@ -347,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item cloned" style="width: 640px;">
+                            <div class="col-md-6" style="background:white;width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                        
@@ -365,7 +316,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item" style="width: 640px;">
+                            <div class="col-md-6" style="background:white;width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                         
@@ -383,7 +334,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item active center" style="width: 640px;">
+                            <div class="col-md-6 active center" style="background:white;width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                          
@@ -401,7 +352,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item active" style="width: 640px;">
+                            <div class="col-md-6 active" style="background:white;width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                         
@@ -421,7 +372,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item cloned" style="width: 640px;">
+                            <div class="col-md-6 cloned" style="background:white;width: 640px;">
                                 <div class="item">
                                     <div class="event-bx">
                                        
@@ -439,18 +390,9 @@
                                     </div>
                                 </div>
                             </div>
-                       
-                        </div>
+                        
                     </div>
-                    <div class="owl-nav disabled">
-                        <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
-                        <div class="owl-next"><i class="fa fa-angle-right"></i></div>
-                    </div>
-                    <div class="owl-dots">
-                        <div class="owl-dot"><span></span></div>
-                        <div class="owl-dot active"><span></span></div>
-                        <div class="owl-dot"><span></span></div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="text-center">
@@ -458,6 +400,7 @@
         </div>
     </div>
 
+ 
 
 </div>
 
